@@ -23,33 +23,40 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4">
-      
-      {/* Header */}
-      <img
-        src="/logo.svg"
-        alt="SAABHI"
-        className="w-40 mb-8"
-      />
+    <>
+      {/* HEADER */}
+      <header className="w-full bg-white/90 backdrop-blur shadow-md">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center">
+          <img
+            src="/logo.svg"
+            alt="SAABHI"
+            className="h-10"
+          />
+        </div>
+      </header>
 
-      {/* Form Card */}
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white/90 backdrop-blur rounded-2xl p-6 w-full max-w-sm shadow-lg"
+      {/* MAIN CONTENT */}
+      <main
+        className="min-h-[calc(100vh-72px)] flex items-center justify-center px-4"
+        style={{ backgroundImage: "url('/bg.jpg')" }}
       >
-        <h2 className="text-center text-lg font-semibold text-green-800 mb-4">
-          Get Your Free Ayurveda Guide
-        </h2>
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white/90 backdrop-blur rounded-2xl p-6 w-full max-w-sm shadow-lg"
+        >
+          <h2 className="text-center text-lg font-semibold text-green-800 mb-4">
+            Get Your Free Ayurveda Guide
+          </h2>
 
-        <input
-          required
-          placeholder="Your Name"
-          className="w-full border rounded-lg px-4 py-2 mb-3"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+          <input
+            required
+            placeholder="Your Name"
+            className="w-full border rounded-lg px-4 py-2 mb-3"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-        <input
+          <input
             required
             type="tel"
             inputMode="numeric"
@@ -59,21 +66,20 @@ export default function Home() {
             className="w-full border rounded-lg px-4 py-2 mb-4"
             value={phone}
             onChange={(e) => {
-                const value = e.target.value.replace(/\D/g, '');
-                if (value.length <= 10) {
-                  setPhone(value);
-                }
+              const value = e.target.value.replace(/\D/g, '');
+              if (value.length <= 10) setPhone(value);
             }}
-        />
+          />
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-green-800 text-white py-2 rounded-lg hover:bg-green-700 transition"
-        >
-          {loading ? 'Please wait...' : 'Download PDF'}
-        </button>
-      </form>
-    </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-green-800 text-white py-2 rounded-lg hover:bg-green-900 transition"
+          >
+            {loading ? 'Please wait...' : 'Download PDF'}
+          </button>
+        </form>
+      </main>
+    </>
   );
 }
