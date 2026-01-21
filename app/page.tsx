@@ -53,7 +53,7 @@ export default function Home() {
           className="bg-white p-6 w-full max-w-sm shadow-2xl rounded-2xl relative z-10 border border-black/10"
         >
           <h2 className="text-center text-lg font-semibold text-green-800 mb-4">
-            Get Your Free Ayurveda Guide
+            Your Guide to Healthy Eating, the Ayurvedic Way
           </h2>
 
           <input
