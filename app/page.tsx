@@ -59,7 +59,7 @@ export default function Home() {
           <input
             required
             placeholder="Your Name"
-            className="w-full border rounded-lg px-4 py-2 mb-3"
+            className="w-full border-2 border-gray-400 rounded-lg px-4 py-2 mb-3 text-gray-900 placeholder:text-gray-500 focus:border-green-800 focus:outline-none"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -71,7 +71,7 @@ export default function Home() {
             pattern="[0-9]{10}"
             maxLength={10}
             placeholder="Mobile Number"
-            className="w-full border rounded-lg px-4 py-2 mb-4"
+            className="w-full border-2 border--400 rounded-lg px-4 py-2 mb-4 text-gray-900 placeholder:text-gray-500 focus:border-green-800 focus:outline-none"
             value={phone}
             onChange={(e) => {
               const value = e.target.value.replace(/\D/g, '');
