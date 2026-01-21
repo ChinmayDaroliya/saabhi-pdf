@@ -9,6 +9,10 @@ export default function Home() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+
+      // OPEN PDF FIRST (user gesture)
+    window.open('/saabhi.pdf', '_blank');
+
     setLoading(true);
 
     await fetch('/api/submit', {
@@ -19,7 +23,7 @@ export default function Home() {
 
     setLoading(false);
 
-    window.open('/saabhi.pdf', '_blank');
+    // window.open('/saabhi.pdf', '_blank');
   }
 
   return (
@@ -40,9 +44,13 @@ export default function Home() {
         className="min-h-[calc(100vh-72px)] flex items-center justify-center px-4"
         style={{ backgroundImage: "url('/bg.jpg')" }}
       >
+          {/* DARK OVERLAY */}
+          <div className="absolute inset-0 bg-black/30" />
+        {/* {content} */}
+        <div className="relative z-10 w-full flex justify-center">
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-lg relative z-10"
+          className="bg-white p-6 w-full max-w-sm shadow-2xl rounded-2xl relative z-10 border border-black/10"
         >
           <h2 className="text-center text-lg font-semibold text-green-800 mb-4">
             Get Your Free Ayurveda Guide
@@ -79,6 +87,7 @@ export default function Home() {
             {loading ? 'Please wait...' : 'Download PDF'}
           </button>
         </form>
+        </div>
       </main>
     </>
   );
