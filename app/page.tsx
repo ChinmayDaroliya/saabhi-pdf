@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <>
       {/* HEADER */}
-      <header className="w-full bg-white/90 backdrop-blur shadow-md">
+      <header className="w-full bg-white shadow-md relative z-20">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center">
           <img
             src="/logo.svg"
@@ -42,7 +42,7 @@ export default function Home() {
       >
         <form
           onSubmit={handleSubmit}
-          className="bg-white/90 backdrop-blur rounded-2xl p-6 w-full max-w-sm shadow-lg"
+          className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-lg relative z-10"
         >
           <h2 className="text-center text-lg font-semibold text-green-800 mb-4">
             Get Your Free Ayurveda Guide
