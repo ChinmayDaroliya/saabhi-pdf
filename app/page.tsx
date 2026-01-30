@@ -41,8 +41,13 @@ export default function Home() {
 
       {/* MAIN CONTENT */}
       <main
-        className="min-h-[calc(100vh-72px)] flex items-center justify-center px-4"
-        style={{ backgroundImage: "url('/bg.jpg')" }}
+        className="min-h-[calc(100vh-72px)] flex items-center justify-center px-4 relative"
+        style={{ 
+          backgroundImage: "url('/bg.jpg')" ,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+
+          }}
       >
           {/* DARK OVERLAY */}
           <div className="absolute inset-0 bg-black/30" />
