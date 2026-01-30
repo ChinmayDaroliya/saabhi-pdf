@@ -30,7 +30,7 @@ export default function Home() {
     <>
       {/* HEADER */}
       <header className="w-full bg-white shadow-md relative z-20">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-center items-center">
           <img
             src="/logo.svg"
             alt="SAABHI"
